@@ -14,6 +14,17 @@ export function createStudent(name){
   }).then( res => res.json() )
 }
 
+export function updateStudent(name){
+  return fetch("http://localhost:3000/api/v1/students", {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'PATCH',
+    body: JSON.stringify( {student: {name: name}} )
+  })
+}
+
 export function deleteStudent(id){
   return fetch(`http://localhost:3000/api/v1/students/${id}`, { method: 'DELETE'})
     .then( res => res.json() )
