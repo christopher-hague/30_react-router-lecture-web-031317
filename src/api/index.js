@@ -48,7 +48,9 @@ export function deleteStudent(student) {
   })
 }
 
-export function deleteStudent(id){
-  return fetch(`http://localhost:3000/api/v1/students/${id}`, { method: 'DELETE'})
-    .then( res => res.json() )
-}
+// export function deleteStudent(id){
+//   return fetch(`http://localhost:3000/api/v1/students/${id}`, { method: 'DELETE'})
+//     .then( res => res.json() )
+// =======
+// >>>>>>> Stashed changes
+// }
