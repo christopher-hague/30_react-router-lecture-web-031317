@@ -29,7 +29,7 @@ class StudentsContainer extends Component {
   }
 
   handleUpdateStudent(id) {
-    console.log
+
   }
 
   handleDeleteStudent(event, student) {

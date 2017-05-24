@@ -23,6 +23,29 @@ export function updateStudent(name){
     method: 'PATCH',
     body: JSON.stringify( {student: {name: name}} )
   })
+  .then(response => response.json() )
+}
+
+export function updateStudent(student) {
+  return fetch(`http://localhost:3000/api/v1/students/${student.id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'PATCH',
+    body: JSON.stringify( {student: {name: name:}} )
+  })
+  .then(response => response.json() )
+}
+
+export function deleteStudent(student) {
+  return fetch(`http://localhost:3000/api/v1/students/${student.id}`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'DELETE'
+  })
 }
 
 export function deleteStudent(id){

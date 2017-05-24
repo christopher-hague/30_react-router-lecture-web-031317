@@ -25,7 +25,10 @@ function StudentsApp(props) {
             <Route path="/students/new" render={() => < StudentForm  onSubmit={ props.onSubmit }/>}/>
             <Route path="/students/:id" render={({match}) => {
               const student = props.students.find(student => student.id === parseInt(match.params.id))
-              return <h1>{student.name}</h1>}
+              if(!student) {
+                return <h3>Loading</h3>
+              }
+              return <div><h1>{student.name}</h1><Link to="/students"><button className="delete" onClick={ () => {props.handleDelete(event, student)} }>Delete Student</button></Link></div> }
             }/>
           </Switch>
         </div>
